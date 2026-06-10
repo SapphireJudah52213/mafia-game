@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mafia Client</title></head>
+<body>
+<h1>Mafia Client</h1>
+<button onclick="connect()">Connect</button>
+<pre id="log"></pre>
+<script>
+function connect(){
+ const ws=new WebSocket('wss://YOUR_SERVER_URL');
+ ws.onmessage=e=>document.getElementById('log').textContent+=e.data+'\n';
+}
+</script>
+</body>
+</html>
